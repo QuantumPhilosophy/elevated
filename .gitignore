@@ -65,3 +65,6 @@ typings/
 
 # Mac files
 .DS_Store
+
+# hiding local sql config
+config/

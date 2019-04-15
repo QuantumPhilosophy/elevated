@@ -3,34 +3,34 @@
 module.exports = function (sequelize, DataTypes) {
     const bev = sequelize.define('bev', {
       bev_category: {
-        text: DataTypes.STRING
+        type: DataTypes.STRING
       },
       bev_type: {
-        text: DataTypes.STRING
+        type: DataTypes.STRING
       },
       bev_name: {
-        text: DataTypes.STRING
+        type: DataTypes.STRING
       },
       bev_abv: {
-        text: DataTypes.STRING
+        type: DataTypes.STRING
       },
       bev_ibu: {
-        text: DataTypes.STRING
+        type: DataTypes.STRING
       },
       bev_country: {
-        text: DataTypes.STRING
+        type: DataTypes.STRING
       },
       bev_maker: {
-        text: DataTypes.STRING
+        type: DataTypes.STRING
       },
       bev_descr: {
-        text: DataTypes.TEXT
+        type: DataTypes.TEXT
       },
       bev_organic: {
-          text: DataTypes.Boolean
+        type: DataTypes.BOOLEAN
       },
       bev_img: {
-          text: DataTypes.TEXT
+        type: DataTypes.TEXT
       }
     })
     return bev
