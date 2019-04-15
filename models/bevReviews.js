@@ -3,7 +3,7 @@
 module.exports = function (sequelize, DataTypes) {
     const bev_review = sequelize.define('bev_review', {
       user_id: {
-        type: DataTypes.INT
+        type: DataTypes.INTEGER
       },
       bev_id: {
         type: DataTypes.STRING
@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.TEXT
       },
       bev_rating: {
-        type: DataTypes.INT
+        type: DataTypes.INTEGER
       }
     })
     return bev_review

@@ -24,7 +24,7 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.TEXT
       },
       strain_img: {
-          type: DataTypes.TEXT
+        type: DataTypes.TEXT
       }
     })
     return strain

@@ -3,7 +3,7 @@
 module.exports = function (sequelize, DataTypes) {
     const strain_review = sequelize.define('strain_review', {
       user_id: {
-        type: DataTypes.INT
+        type: DataTypes.INTEGER
       },
       strain_id: {
         type: DataTypes.STRING
@@ -12,9 +12,8 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.TEXT
       },
       strain_rating: {
-        type: DataTypes.INT
+        type: DataTypes.INTEGER
       }
     })
     return strain_review
   }
-  
