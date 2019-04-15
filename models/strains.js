@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = function (sequelize, DataTypes) {
-    const Strain = sequelize.define('Strain', {
+    const strain = sequelize.define('strain', {
       strain_name: {
         type: DataTypes.STRING
       },
@@ -27,5 +27,6 @@ module.exports = function (sequelize, DataTypes) {
           type: DataTypes.TEXT
       }
     })
-    return Strain
+    return strain
   }
+  

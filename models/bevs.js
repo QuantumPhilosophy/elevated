@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = function (sequelize, DataTypes) {
-    const Bev = sequelize.define('Bev', {
+    const bev = sequelize.define('bev', {
       bev_category: {
         text: DataTypes.STRING
       },
@@ -33,6 +33,6 @@ module.exports = function (sequelize, DataTypes) {
           text: DataTypes.TEXT
       }
     })
-    return Bev
+    return bev
   }
   
