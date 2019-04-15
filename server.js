@@ -15,13 +15,11 @@ app.use(express.json())
 app.use(express.static('public'))
 
 // Handlebars
-app.engine(
-  'handlebars',
-  exphbs({
-    defaultLayout: 'main'
-  })
-)
-app.set('view engine', 'handlebars')
+app.engine('.hbs', exphbs({
+  defaultLayout: 'main',
+  extname: '.hbs'
+}))
+app.set('view engine', 'hbs')
 
 // Routes
 require('./routes/apiRoutes')(app)
