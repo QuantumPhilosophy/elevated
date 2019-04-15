@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS elevate_db;
 
 -- name of the database
 CREATE DATABASE elevate_db;
@@ -120,3 +121,6 @@ CREATE TABLE strain_reviews(
     strain_rating TINYINT,
     PRIMARY KEY(id)
 )
+
+DROP DATABASE IF EXISTS testdb;
+CREATE DATABASE testdb;
