@@ -18,7 +18,7 @@ CREATE TABLE users(
     -- users email
     user_email VARCHAR(100) NOT NULL,
     PRIMARY KEY(id)
-)
+);
 
 -- creates a table for all of the beverages: beer wine and spirits
 CREATE TABLE bevs(
@@ -44,7 +44,7 @@ CREATE TABLE bevs(
     -- picture of the product
     bev_img VARCHAR(5000),
     PRIMARY KEY(id)
-)
+);
 
 -- creates a table for strains of MJ
 CREATE TABLE strains(
@@ -66,23 +66,23 @@ CREATE TABLE strains(
     -- image for strain
     strain_img VARCHAR(5000),
     PRIMARY KEY(id)
-)
+);
 
 -- creates a table for the wishlist/ strains user wants to try
 CREATE TABLE wishlist_strains(
     id INT NOT NULL AUTO_INCREMENT,
     user_id VARCHAR(10) NOT NULL,
-    strains_id VARCHAR(10)
+    strains_id VARCHAR(10),
     PRIMARY KEY(id)
-)
+);
 
 -- creates a table for the wishlist/ beverages user wants to try
 CREATE TABLE wishlist_bevs(
     id INT NOT NULL AUTO_INCREMENT,
     user_id VARCHAR(10) NOT NULL,
-    bev_id VARCHAR(10)
+    bev_id VARCHAR(10),
     PRIMARY KEY(id)
-)
+);
 
 -- creates table for friends
 CREATE TABLE friends(
@@ -92,7 +92,7 @@ CREATE TABLE friends(
     -- name of the friend
     friend_id INT(100) NOT Null,
     PRIMARY KEY(id)
-)
+);
 
 -- creates table for strains reviews
 CREATE TABLE bev_reviews(
@@ -102,11 +102,11 @@ CREATE TABLE bev_reviews(
     -- name of the friend
     bev_id INT(100) NOT Null,
     -- text for the review
-    bev_review VARCHAR(1000)
+    bev_review VARCHAR(1000),
     -- 1-5 rating
     bev_rating TINYINT,
     PRIMARY KEY(id)
-)
+);
 
 -- creates tbale for beverage reviews
 CREATE TABLE strain_reviews(
@@ -116,11 +116,11 @@ CREATE TABLE strain_reviews(
     -- name of the friend
     strain_id INT(100) NOT Null,
     -- text for the review
-    strain_review VARCHAR(1000)
+    strain_review VARCHAR(1000),
     -- 1-5 rating
     strain_rating TINYINT,
     PRIMARY KEY(id)
-)
+);
 
 DROP DATABASE IF EXISTS testdb;
 CREATE DATABASE testdb;
