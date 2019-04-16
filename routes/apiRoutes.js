@@ -3,24 +3,28 @@
 const db = require('../models')
 
 module.exports = function (app) {
-  // Get all examples
-  app.get('/api/examples', function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
-      res.json(dbExamples)
+  // Get all beverage reviews
+  app.get('/api/bevReview', function (req, res) {
+    db.bev_review.findAll({}).then(function (bevReview) {
+      res.json(bevReview)
     })
   })
 
-  // Create a new example
-  app.post('/api/examples', function (req, res) {
-    db.Example.create(req.body).then(function (dbExample) {
-      res.json(dbExample)
+  // Create a new review
+  app.post('/api/bevReview', function (req, res) {
+    db.bev_review.create(req.body).then(function (bevReview) {
+      res.json(bevReview)
     })
   })
 
-  // Delete an example by id
-  app.delete('/api/examples/:id', function (req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
-      res.json(dbExample)
+  // Delete a review by id
+  app.delete('/api/bevReview/:id', function (req, res) {
+    db.bev_review.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (bevReview) {
+      res.json(bevReview)
     })
   })
 }
