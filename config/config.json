@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "Drpib0328!",
     "database": "elevate_db",
     "host": "localhost",
     "dialect": "mysql"
