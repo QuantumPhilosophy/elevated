@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "watch": "nodemon server.js",
     "lint": "standard .",
     "fix": "standard --fix .",
     "test": "standard && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit"
