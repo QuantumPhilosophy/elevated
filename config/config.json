@@ -1,8 +1,14 @@
 {
   "development": {
+<<<<<<< HEAD
     "username": "admin",
     "password": "admin",
     "database": "exampledb",
+=======
+    "username": "root",
+    "password": null,
+    "database": "elevate_db",
+>>>>>>> 8a94450a706700eb1236d24e06e25703cc8102ff
     "host": "localhost",
     "dialect": "mysql"
   },

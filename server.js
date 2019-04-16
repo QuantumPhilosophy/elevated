@@ -10,24 +10,26 @@ const app = express()
 const PORT = process.env.PORT || 3030
 
 // Middleware
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({
+  extended: false
+}))
 app.use(express.json())
 app.use(express.static('public'))
 
 // Handlebars
-app.engine(
-  'handlebars',
-  exphbs({
-    defaultLayout: 'main'
-  })
-)
-app.set('view engine', 'handlebars')
+app.engine('.hbs', exphbs({
+  defaultLayout: 'main',
+  extname: '.hbs'
+}))
+app.set('view engine', 'hbs')
 
 // Routes
 require('./routes/apiRoutes')(app)
 require('./routes/htmlRoutes')(app)
 
-const syncOptions = { force: false }
+const syncOptions = {
+  force: false
+}
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
