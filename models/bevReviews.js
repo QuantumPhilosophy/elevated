@@ -13,6 +13,9 @@ module.exports = function (sequelize, DataTypes) {
     },
     bev_rating: {
       type: DataTypes.INTEGER
+    },
+    ave_rating: {
+      type: DataTypes.INTEGER
     }
   })
   return bev_review
