@@ -1,5 +1,12 @@
 body {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   background-color: black;
+  background: url('../imgs/strain_4.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
   color: darkgray;
+}
+
+.card {
+  opacity: 0.85;
 }

@@ -1,14 +1,34 @@
 <!doctype html>
-<html lang="en-US" class="h-100">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="/styles/styles.css">
-  <title>Elevate</title>
+  <title>Elevated</title>
 </head>
-<body class="h-100">
+<body>
+
+  <nav>
+    <div class="nav-wrapper grey darken-4">
+      <a href="#!" class="brand-logo left">Elevated</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav grey darken-4" id="mobile-demo">
+    <li><a class="grey-text text-darken-2" href="sass.html">Sass</a></li>
+    <li><a class="grey-text text-darken-2" href="badges.html">Components</a></li>
+    <li><a class="grey-text text-darken-2" href="collapsible.html">Javascript</a></li>
+    <li><a class="grey-text text-darken-2" href="mobile.html">Mobile</a></li>
+  </ul>
 
 <div class="container">
   {{{ body }}}
