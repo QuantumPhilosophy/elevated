@@ -14,19 +14,19 @@ const API = {
         'Content-Type': 'application/json'
       },
       type: 'POST',
-      url: 'api/examples',
+      url: 'api/bevReview',
       data: JSON.stringify(example)
     })
   },
   getExamples: function () {
     return $.ajax({
-      url: 'api/examples',
+      url: 'api/bevReview',
       type: 'GET'
     })
   },
   deleteExample: function (id) {
     return $.ajax({
-      url: 'api/examples/' + id,
+      url: 'api/bevReview/' + id,
       type: 'DELETE'
     })
   }
