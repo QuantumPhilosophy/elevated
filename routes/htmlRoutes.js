@@ -1,11 +1,11 @@
 'use strict'
 
 const db = require('../models')
+var isAuthenticated = require('../config/middleware/isAuthenticated')
 
 module.exports = function (app) {
-<<<<<<< HEAD
   // Load strains page to view all strains
-  app.get('/strains', function (req, res) {
+  app.get('/strains', isAuthenticated, function (req, res) {
     db.strain.findAll({}).then(function (strains) {
       res.render('strains', {
 
@@ -14,24 +14,21 @@ module.exports = function (app) {
   })
 
   // Load bevs page to view all bevs
-  app.get('/bevs', function (req, res) {
+  app.get('/bevs', isAuthenticated, function (req, res) {
     db.strain.findAll({}).then(function (strains) {
       res.render('bevs', {
 
       })
     })
   })
+  // Here we've add our isAuthenticated middleware to this route.
+  // If a user who is not logged in tries to access this route they will be redirected to the signup page
+  app.get('/members', isAuthenticated, function (req, res) {
+    res.render('members', {
 
-  app.get('/members', function (req, res) {
-    db.strain.findAll({}).then(function (strains) {
-      res.render('members', {
-
-      })
     })
   })
 
-=======
->>>>>>> ecf831de4e2eddf62cd1fd8bf9ef98ce64e4ca7b
   // Render 404 page for any unmatched routes
   app.get('*', function (req, res) {
     res.render('404')
