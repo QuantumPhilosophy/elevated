@@ -3,25 +3,28 @@
 const db = require('../models')
 
 module.exports = function (app) {
-  // Load index page
-  app.get('/', function (req, res) {
-    db.bev_review.findAll({}).then(function (bevReview) {
-      res.render('index', {
-        msg: 'Welcome to Elevate!',
-        reviews: bevReview
+  // Load strains page to view all strains
+  app.get('/strains', function (req, res) {
+    db.strain.findAll({}).then(function (strains) {
+      res.render('strains', {
+
       })
     })
   })
 
-  // Load example page and pass in an example by id
-  app.get('/review/:id', function (req, res) {
-    db.strain_review.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(function (strainRev) {
-      res.render('example', {
-        review: strainRev
+  // Load bevs page to view all bevs
+  app.get('/bevs', function (req, res) {
+    db.strain.findAll({}).then(function (strains) {
+      res.render('bevs', {
+
+      })
+    })
+  })
+
+  app.get('/members', function (req, res) {
+    db.strain.findAll({}).then(function (strains) {
+      res.render('members', {
+
       })
     })
   })
