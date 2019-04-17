@@ -1,4 +1,14 @@
 <h2>{{msg}}</h2>
 <h3>Welcome <span class="member-name"></span></h3>
-<a class="navbar-brand" href="/logout">Logout</a>
+{{#each strains}}
+<div class="card grey darken-4">
+  <div class="card-content grey-text text-lighten-2">
+    <span class="card-title">{{dataValues.strain_name}}</span>
+    <p>{{dataValues.strain_descr}}</p>
+  </div>
+  <div class="card-action">
+    <a href="/api/strains/{{dataValues.id}}">This is a link</a>
+  </div>
+</div>
+{{/each}}
 <script src="/js/members.js"></script>
