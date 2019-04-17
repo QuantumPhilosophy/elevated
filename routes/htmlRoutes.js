@@ -14,14 +14,14 @@ module.exports = function (app) {
   })
 
   // Load example page and pass in an example by id
-  app.get('/example/:id', function (req, res) {
-    db.Example.findOne({
+  app.get('/review/:id', function (req, res) {
+    db.strain_review.findOne({
       where: {
         id: req.params.id
       }
-    }).then(function (dbExample) {
+    }).then(function (strainRev) {
       res.render('example', {
-        example: dbExample
+        review: strainRev
       })
     })
   })

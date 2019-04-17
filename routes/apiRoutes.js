@@ -1,6 +1,7 @@
 'use strict'
 
 const db = require('../models')
+const Op = db.Sequelize.Op
 
 module.exports = function (app) {
   // Get all beverage reviews
@@ -74,17 +75,49 @@ module.exports = function (app) {
     })
   })
 
-  // Select all bevs 
+  // Select all bevs
+  app.get('/api/allBevs', function (req, res) {
+    db.bev.findAll({}).then(function (bevs) {
+      res.json(bevs)
+    })
+  })
   // Select bevs where name matches part of search input
+  app.get('/api/allBevs/:name', function (req, res) {
+    db.bev.findAll({
+      where: {
+        bev_name: {
+          [Op.like]: '%' + req.params.name + '%'
+        }
+      }
+    }).then(function (bevs) {
+      res.json(bevs)
+    })
+  })
 
   // Select all strains
+  app.get('/api/allStrains', function (req, res) {
+    db.strain.findAll({}).then(function (strains) {
+      res.json(strains)
+    })
+  })
   // Select strains where name matches part of search input
+  app.get('/api/allStrains/:name', function (req, res) {
+    db.strain.findAll({
+      where: {
+        strain_name: {
+          [Op.like]: '%' + req.params.name + '%'
+        }
+      }
+    }).then(function (bevs) {
+      res.json(bevs)
+    })
+  })
 
-  // Add friend to follow list 
-  // Add product to wishlist 
-  // Add product to tried list 
+  // Add friend to follow list
+  // Add product to wishlist
+  // Add product to tried list
 
-  // Select recent reviews 
+  // Select recent reviews
   app.get('/api/recentStrainReview', function (req, res) {
     db.strain_review.findAll({
       limit: 2,
@@ -107,7 +140,7 @@ module.exports = function (app) {
     })
   })
 
-  // Select reviews by UserId 
+  // Select reviews by UserId
   app.get('/api/userBevReview/:id', function (req, res) {
     db.bev_review.findAll({
       where: {
@@ -127,5 +160,4 @@ module.exports = function (app) {
       res.json(strainReview)
     })
   })
-
 }
