@@ -75,9 +75,19 @@ module.exports = function (app) {
   })
 
   // Select all bevs
+  app.get('/api/allBevs', function (req, res) {
+    db.bev.findAll({}).then(function (bevs) {
+      res.json(bevs)
+    })
+  })
   // Select bevs where name matches part of search input
 
   // Select all strains
+  app.get('/api/allStrains', function (req, res) {
+    db.bev.findAll({}).then(function (strains) {
+      res.json(strains)
+    })
+  })
   // Select strains where name matches part of search input
 
   // Add friend to follow list
