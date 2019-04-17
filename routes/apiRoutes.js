@@ -1,6 +1,7 @@
 'use strict'
 
 const db = require('../models')
+const Op = db.Sequelize.Op
 
 module.exports = function (app) {
   // Get all beverage reviews
@@ -81,14 +82,36 @@ module.exports = function (app) {
     })
   })
   // Select bevs where name matches part of search input
+  app.get('/api/allBevs/:name', function (req, res) {
+    db.bev.findAll({
+      where: {
+        bev_name: {
+          [Op.like]: '%' + req.params.name + '%'
+        }
+      }
+    }).then(function (bevs) {
+      res.json(bevs)
+    })
+  })
 
   // Select all strains
   app.get('/api/allStrains', function (req, res) {
-    db.bev.findAll({}).then(function (strains) {
+    db.strain.findAll({}).then(function (strains) {
       res.json(strains)
     })
   })
   // Select strains where name matches part of search input
+  app.get('/api/allStrains/:name', function (req, res) {
+    db.strain.findAll({
+      where: {
+        strain_name: {
+          [Op.like]: '%' + req.params.name + '%'
+        }
+      }
+    }).then(function (bevs) {
+      res.json(bevs)
+    })
+  })
 
   // Add friend to follow list
   // Add product to wishlist
