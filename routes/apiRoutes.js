@@ -74,17 +74,17 @@ module.exports = function (app) {
     })
   })
 
-  // Select all bevs 
+  // Select all bevs
   // Select bevs where name matches part of search input
 
   // Select all strains
   // Select strains where name matches part of search input
 
-  // Add friend to follow list 
-  // Add product to wishlist 
-  // Add product to tried list 
+  // Add friend to follow list
+  // Add product to wishlist
+  // Add product to tried list
 
-  // Select recent reviews 
+  // Select recent reviews
   app.get('/api/recentStrainReview', function (req, res) {
     db.strain_review.findAll({
       limit: 2,
@@ -107,7 +107,7 @@ module.exports = function (app) {
     })
   })
 
-  // Select reviews by UserId 
+  // Select reviews by UserId
   app.get('/api/userBevReview/:id', function (req, res) {
     db.bev_review.findAll({
       where: {
@@ -127,5 +127,4 @@ module.exports = function (app) {
       res.json(strainReview)
     })
   })
-
 }

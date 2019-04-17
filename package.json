@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "Finding a new drink or strain to try. Tracking what you’ve tried and what you liked. Finding where to buy the things.",
   "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QuantumPhilosophy/elevated"
+  },
   "scripts": {
     "start": "node server.js",
     "watch": "nodemon server.js",
-    "lint": "standard .",
-    "fix": "standard --fix .",
+    "lint": "standard",
+    "fix": "standard --fix",
     "test": "standard && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit"
   },
   "license": "ISC",
