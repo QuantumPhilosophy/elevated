@@ -19,6 +19,9 @@ $(document).ready(function () {
     if (!userData.email || !userData.password || !userData.dob) {
       return
     }
+    if (userData.dob < 21) {
+      return
+    }
     // If we have an email and password, run the signUpUser function
     signUpUser(userData.email, userData.password, userData.dob)
     emailInput.val('')
