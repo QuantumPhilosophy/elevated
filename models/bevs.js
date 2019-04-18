@@ -34,8 +34,13 @@ module.exports = function (sequelize, DataTypes) {
     }
   })
   bev.associate = function (db) {
-    bev.belongsToMany(db.User, { through: 'WishlistBev' })
-    bev.belongsToMany(db.User, { through: 'TriedBev' })
+    bev.belongsToMany(db.User, {
+      through: 'WishlistBev'
+    })
+    bev.belongsToMany(db.User, {
+      as: 'triedUser',
+      through: 'TriedBev'
+    })
   }
   return bev
 }

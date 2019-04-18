@@ -26,8 +26,23 @@ module.exports = function (sequelize, DataTypes) {
   })
 
   User.associate = function (db) {
-    User.belongsToMany(db.bev, { through: 'WishlistBev' })
-    User.belongsToMany(db.bev, { through: 'TriedBev' })
+    User.belongsToMany(db.bev, {
+      through: 'WishlistBev'
+    })
+    User.belongsToMany(db.bev, {
+      as: 'tastedBev',
+      through: 'TriedBev'
+    })
+  }
+
+  User.associate = function (db) {
+    User.belongsToMany(db.strain, {
+      through: 'WishlistStrain'
+    })
+    User.belongsToMany(db.strain, {
+      as: 'tastedStrain',
+      through: 'TriedStrain'
+    })
   }
 
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
