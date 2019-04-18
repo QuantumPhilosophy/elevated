@@ -1,12 +1,63 @@
+/* body of all pages */
 body {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   background-color: black;
-  background: url('../imgs/strain_4.jpg');
+  background: url('../imgs/mj_1.jpg');
   background-repeat: no-repeat;
   background-size: auto;
   color: darkgray;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .card {
   opacity: 0.85;
+}
+
+/* beer modal start*/
+#modal1{
+  background-color: #93B576;
+  color: black;
+}
+
+/* color of text typed in review */
+#review-text{
+  color: #6D8E5D;
+}
+
+/* text of input feild */
+.input-field>label{
+  color:black;
+}
+
+/* color of the footer on modal */
+.modal .modal-footer{
+  background: #6D8E5D;
+}
+
+/* button color and text color on modal */
+.modal .modal-footer .btn{
+  color: #495C3F;
+  background: rgba(110, 185, 11, 0.719)
+}
+
+/* color of radio text ex. 1 2 3 4 5 */
+span{
+  color: black;
+}
+/* beer modal end */
+
+
+
+/* signed in page text */
+h2, h3{
+  color: black;
+}
+
+
+
+/* card on strains page */
+.card .card-content{
+  background-color: #93B576;
+  color: black;
 }
