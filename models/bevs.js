@@ -33,5 +33,9 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.TEXT
     }
   })
+  bev.associate = function (db) {
+    bev.belongsToMany(db.User, { through: 'WishlistBev' })
+    bev.belongsToMany(db.User, { through: 'TriedBev' })
+  }
   return bev
 }
