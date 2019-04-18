@@ -19,9 +19,70 @@
       </div>
       <div class="card-action">
         <a href="/api/strains/{{dataValues.id}}">Leave A Review</a>
+        <!-- Modal Trigger -->
+        <a class="modal-trigger" href="#modal1">Modal</a>
       </div>
     </div>
     {{/each}}
+  </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content grey darken-4">
+    <div class="row">
+      <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Fill in Username here" id="user-id" type="text" class="validate" value="1">
+          <label for="username">User ID</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="bev-id" type="text" class="validate" value="1">
+          <label for="bev-id">Beverage ID</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea class="materialize-textarea" id="review-text"></textarea>
+          <label for="review-text">Textarea</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12" id="bev-rating">
+          <label for="rating">Rating: </label>
+          <br><br>
+          <form action="#">
+            <p>
+              <label>
+                <input class="with-gap"name="group1" type="radio" value="1" />
+                <span>1</span>
+              </label>
+              <label>
+                <input class="with-gap"name="group1" type="radio" value="2" />
+                <span>2</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group1" type="radio" value="3" />
+                <span>3</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group1" type="radio" value="4" />
+                <span>4</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group1" type="radio" value="5" />
+                <span>5</span>
+              </label>
+            </p>
+          </form>
+        </div>
+      </div>
+      </form>
+</div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn" id="review-submit">Submit</a>
   </div>
 </div>
 <script src="/js/bevs.js"></script>

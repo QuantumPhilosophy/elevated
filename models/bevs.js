@@ -31,6 +31,9 @@ module.exports = function (sequelize, DataTypes) {
     },
     bev_img: {
       type: DataTypes.TEXT
+    },
+    bev_average_rating: {
+      type: DataTypes.STRING
     }
   })
   return bev
