@@ -1,17 +1,27 @@
 <div class="row">
   <div class="col s12">
+    <div>Welcome <span class="member-name"></span></div>
+    {{#each strains}}
     <div class="card grey darken-4">
-      <div class="card-content">
-        <span class="card-title">OMG IT WORKS</span>
-        <p>
-          <strong>ID</strong>: {{example.id}}</p>
-        <p>
-        <p>
-          <strong>Text</strong>: {{example.text}}</p>
-        <p>
-          <strong>Description:</strong> {{example.description}}</p>
-          <a href="/">← Back To Home</a>
+      <div class="card-content grey-text text-lighten-2">
+        <span class="card-title">{{dataValues.strain_name}}</span>
+        <div id="rateYo-{{dataValues.id}}"></div>
+        <ul class="collapsible">
+          <li>
+            <div class="collapsible-header grey darken-3"><i class="material-icons">info_outline</i>Info</div>
+            <div class="collapsible-body"><span>{{dataValues.strain_descr}}</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header grey darken-3"><i class="material-icons">description</i>Description</div>
+            <div class="collapsible-body"><span>{{dataValues.strain_descr}}</span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="card-action">
+        <a href="/api/strains/{{dataValues.id}}">Leave A Review</a>
       </div>
     </div>
+    {{/each}}
   </div>
 </div>
+<script src="/js/strains.js"></script>

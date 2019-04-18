@@ -11,6 +11,4 @@ $(document).ready(function () {
       rating: 3.6
     })
   })
-
-  $('.modal').modal()
 })
