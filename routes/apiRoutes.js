@@ -94,7 +94,7 @@ module.exports = function (app) {
         }
       }
     }).then(function (bevs) {
-      res.json(bevs).addUser(1)
+      res.json(bevs)
     })
   })
 
