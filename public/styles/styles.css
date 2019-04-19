@@ -2,12 +2,7 @@
 body {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   background-color: black;
-  background: url('../imgs/mj_1.jpg');
-  background-repeat: no-repeat;
-  background-size: auto;
   color: darkgray;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .card {

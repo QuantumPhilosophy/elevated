@@ -1,6 +1,20 @@
+<style>
+  body {
+    background: url('../imgs/mj_1.jpg') black;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+</style>
 <div class="row">
   <div class="col s12">
-    <div>Welcome <span class="member-name"></span></div>
+    <div class="center-align">Welcome <span class="member-name"></span></div>
+    <ul class="tabs grey darken-3">
+      <li class="tab col s4"><a href="#sativa" class="active">Hybrid</a></li>
+      <li class="tab col s4"><a href="#indica">Indica</a></li>
+      <li class="tab col s4"><a href="#hybrid">Sativa</a></li>
+    </ul>
     {{#each strains}}
     <div class="card grey darken-4">
       <div class="card-content grey-text text-lighten-2">
@@ -9,7 +23,13 @@
         <ul class="collapsible">
           <li>
             <div class="collapsible-header grey darken-3"><i class="material-icons">info_outline</i>Info</div>
-            <div class="collapsible-body"><span>{{dataValues.strain_descr}}</span></div>
+            <div class="collapsible-body">
+              <div><strong>Species:</strong> <span class="green-text">{{dataValues.strain_race}}</span></div>
+              <div><strong>Flavors:</strong> <span class="green-text">{{dataValues.strain_flavor}}</span></div>
+              <div><strong>Positive:</strong> <span class="green-text">{{dataValues.strain_positive}}</span></div>
+              <div><strong>Negative:</strong> <span class="red-text">{{dataValues.strain_negative}}</span></div>
+              <div><strong>Medical:</strong> <span class="green-text">{{dataValues.strain_medical}}</span></div>
+            </div>
           </li>
           <li>
             <div class="collapsible-header grey darken-3"><i class="material-icons">description</i>Description</div>
@@ -33,23 +53,23 @@
       <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
-          <input placeholder="Fill in Username here" id="user-id" type="text" class="validate" value="1">
+          <input placeholder="Fill in Username here" id="user-id" type="text" class="grey-text validate" value="1">
           <label for="username">User ID</label>
         </div>
         <div class="input-field col s6">
-          <input id="strain-id" type="text" class="validate" value="1">
+          <input id="strain-id" type="text" class="grey-text validate" value="1">
           <label for="strain-id">Strain ID</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <textarea class="materialize-textarea" id="review-text"></textarea>
-          <label for="review-text">Textarea</label>
+          <textarea class="materialize-textarea grey-text validate" id="review-text"></textarea>
+          <label for="review-text">Leave comments here</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12" id="strain-rating">
-          <label for="rating">Rating: </label>
+          <label for="rating">Rating </label>
           <br><br>
           <form action="#">
             <p>
@@ -80,7 +100,7 @@
     </form>
   </div>
   </div>
-  <div class="modal-footer">
+  <div class="modal-footer grey darken-4">
     <a href="#!" class="modal-close waves-effect waves-green btn" id="review-submit">Submit</a>
   </div>
 </div>
