@@ -5,12 +5,17 @@ $(document).ready(function () {
     $('.member-name').text(data.email)
   })
 
-  $(function () {
-    $(`#rateYo-1`).rateYo({
+  const ratings = $('.rateYo')
+  // console.log(ratings[0].dataset)
+  for (let i = 0; i < ratings.length; i++) {
+    console.log('------------------------------------')
+    console.log(ratings[i].dataset)
+    console.log('------------------------------------')
+    $(`#rateYo-${ratings[i].dataset.id}`).rateYo({
       halfStar: true,
-      rating: 3.6
+      rating: ratings[i].dataset.averageRating
     })
-  })
+  }
 
   // jQuery for materialize modals.
   $('.modal').modal()

@@ -8,10 +8,10 @@ $(document).ready(function () {
   })
 
   // TODO: grab all rateYo classes and loop over to initialize #rateYo-${id} and rating: ${average-rating}
-  $(function () {
-    $(`#rateYo-1`).rateYo({
-      halfStar: true,
-      rating: 3.6
-    })
-  })
+  // $(function () {
+  //   $(`#rateYo-1`).rateYo({
+  //     halfStar: true,
+  //     rating: 3.6
+  //   })
+  // })
 })

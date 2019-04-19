@@ -15,49 +15,46 @@ body {
 }
 
 /* beer modal start*/
-#modal1{
+/* #modal1{
   background-color: #93B576;
   color: black;
-}
+} */
 
 /* color of text typed in review */
-#review-text{
+/* #review-text{
   color: #6D8E5D;
-}
+} */
 
 /* text of input feild */
-.input-field>label{
+/* .input-field>label{
   color:black;
-}
+} */
 
 /* color of the footer on modal */
-.modal .modal-footer{
+/* .modal .modal-footer{
   background: #6D8E5D;
-}
+} */
 
 /* button color and text color on modal */
-.modal .modal-footer .btn{
+/* .modal .modal-footer .btn{
   color: #495C3F;
   background: rgba(110, 185, 11, 0.719)
-}
+} */
 
 /* color of radio text ex. 1 2 3 4 5 */
-span{
+/* span{
   color: black;
-}
+} */
+
 /* beer modal end */
 
-
-
 /* signed in page text */
-h2, h3{
+/* h2, h3{
   color: black;
-}
-
-
+} */
 
 /* card on strains page */
-.card .card-content{
+/* .card .card-content{
   background-color: #93B576;
   color: black;
-}
+} */
