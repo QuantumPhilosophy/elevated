@@ -36,5 +36,14 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING
     }
   })
+  bev.associate = function (db) {
+    bev.belongsToMany(db.User, {
+      through: 'WishlistBev'
+    })
+    bev.belongsToMany(db.User, {
+      as: 'triedUser',
+      through: 'TriedBev'
+    })
+  }
   return bev
 }

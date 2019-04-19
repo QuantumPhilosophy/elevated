@@ -30,5 +30,14 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING
     }
   })
+  strain.associate = function (db) {
+    strain.belongsToMany(db.User, {
+      through: 'WishlistStrain'
+    })
+    strain.belongsToMany(db.User, {
+      as: 'triedUser',
+      through: 'TriedStrain'
+    })
+  }
   return strain
 }
