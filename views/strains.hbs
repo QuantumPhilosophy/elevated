@@ -1,17 +1,87 @@
 <div class="row">
   <div class="col s12">
+    <div>Welcome <span class="member-name"></span></div>
+    {{#each strains}}
     <div class="card grey darken-4">
-      <div class="card-content">
-        <span class="card-title">OMG IT WORKS</span>
-        <p>
-          <strong>ID</strong>: {{example.id}}</p>
-        <p>
-        <p>
-          <strong>Text</strong>: {{example.text}}</p>
-        <p>
-          <strong>Description:</strong> {{example.description}}</p>
-          <a href="/">← Back To Home</a>
+      <div class="card-content grey-text text-lighten-2">
+        <span class="card-title">{{dataValues.strain_name}}</span>
+        <div id="rateYo-{{dataValues.id}}" class="rateYo" data-id="{{dataValues.id}}" data-average-rating="{{dataValues.strain_average_rating}}"></div>
+        <ul class="collapsible">
+          <li>
+            <div class="collapsible-header grey darken-3"><i class="material-icons">info_outline</i>Info</div>
+            <div class="collapsible-body"><span>{{dataValues.strain_descr}}</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header grey darken-3"><i class="material-icons">description</i>Description</div>
+            <div class="collapsible-body"><span>{{dataValues.strain_descr}}</span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="card-action">
+        <!-- Modal Trigger -->
+        <a class="modal-trigger" href="#strainsModal">Review</a>
       </div>
     </div>
+    {{/each}}
   </div>
 </div>
+
+<!-- Modal Structure -->
+<div id="strainsModal" class="modal">
+  <div class="modal-content grey darken-4">
+    <div class="row">
+      <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Fill in Username here" id="user-id" type="text" class="validate" value="1">
+          <label for="username">User ID</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="strain-id" type="text" class="validate" value="1">
+          <label for="strain-id">Strain ID</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea class="materialize-textarea" id="review-text"></textarea>
+          <label for="review-text">Textarea</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12" id="strain-rating">
+          <label for="rating">Rating: </label>
+          <br><br>
+          <form action="#">
+            <p>
+              <label>
+                <input class="with-gap" name="group1" type="radio" value="1" />
+                <span>1</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group1" type="radio" value="2" />
+                <span>2</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group1" type="radio" value="3" />
+                <span>3</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group1" type="radio" value="4" />
+                <span>4</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group1" type="radio" value="5" />
+                <span>5</span>
+              </label>
+            </p>
+          </form>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn" id="review-submit">Submit</a>
+  </div>
+</div>
+<script src="/js/strains.js"></script>

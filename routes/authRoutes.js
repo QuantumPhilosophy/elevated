@@ -21,9 +21,7 @@ module.exports = function (app) {
   app.get('/login', function (req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.render('members', {
-        msg: 'Welcome to Elevate!'
-      })
+      res.redirect('/members')
     } else {
       res.render('login', {
         msg: 'Welcome to Elevate!'

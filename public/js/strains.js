@@ -16,24 +16,19 @@ $(document).ready(function () {
   // jQuery for materialize modals.
   $('.modal').modal()
 
-  var reviewUser
-  var reviewBev
-  var reviewTxt
-  var reviewRtg
-
   $('#review-submit').click(function (event) {
     event.preventDefault()
-    reviewUser = $('#user-id').val()
-    reviewBev = $('#bev-id').val()
-    reviewRtg = $('input[name=group1]:checked')[0].value
-    reviewTxt = $('#review-text').val()
+    const reviewUser = $('#user-id').val()
+    const reviewStrain = $('#strain-id').val()
+    const reviewRtg = $('input[name=group1]:checked')[0].value
+    const reviewTxt = $('#review-text').val()
 
     let createReview = function () {
-      $.post('/api/bevReview', {
+      $.post('/api/strainReview', {
         user_id: reviewUser,
-        bev_id: reviewBev,
-        bev_review: reviewTxt,
-        bev_rating: reviewRtg })
+        strain_id: reviewStrain,
+        strain_review: reviewTxt,
+        strain_rating: reviewRtg })
         .then(function (data) {
           console.log(data)
         })

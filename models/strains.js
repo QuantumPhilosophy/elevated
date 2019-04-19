@@ -25,6 +25,9 @@ module.exports = function (sequelize, DataTypes) {
     },
     strain_img: {
       type: DataTypes.TEXT
+    },
+    strain_average_rating: {
+      type: DataTypes.STRING
     }
   })
   strain.associate = function (db) {

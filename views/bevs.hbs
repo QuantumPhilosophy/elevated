@@ -1,17 +1,36 @@
 <div class="row">
   <div class="col s12">
+    <div>Welcome <span class="member-name"></span></div>
+    {{#each bevs}}
     <div class="card grey darken-4">
-      <div class="card-content">
-        <span class="card-title">MODAL MADNESS!</span>
+      <div class="card-content grey-text text-lighten-2">
+        <span class="card-title">{{dataValues.bev_name}}</span>
+        <div id="rateYo-{{dataValues.id}}" class="rateYo"  data-id="{{dataValues.id}}" data-average-rating="{{dataValues.bev_average_rating}}"></div>
+        <ul class="collapsible">
+          <li>
+            <div class="collapsible-header grey darken-3"><i class="material-icons">info_outline</i>Info</div>
+            <div class="collapsible-body"><span>{{dataValues.bev_descr}}</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header grey darken-3"><i class="material-icons">description</i>Description</div>
+            <div class="collapsible-body"><span>{{dataValues.bev_descr}}</span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="card-action">
+        <!-- Modal Trigger -->
+        <a class="modal-trigger" href="#bevsModal">Review</a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
 
-<!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-     <div class="row">
-    <form class="col s12">
+<!-- Modal Structure -->
+<div id="bevsModal" class="modal">
+  <div class="modal-content grey darken-4">
+    <div class="row">
+      <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
           <input placeholder="Fill in Username here" id="user-id" type="text" class="validate" value="1">
@@ -30,46 +49,39 @@
       </div>
       <div class="row">
         <div class="input-field col s12" id="bev-rating">
-             <label for="rating">Rating: </label>
-             <br><br>
-             <form action="#">
-    <p>
-      <label>
-        <input class="with-gap"name="group1" type="radio" value="1" />
-        <span>1</span>
-      </label>
-      <label>
-        <input class="with-gap"name="group1" type="radio" value="2" />
-        <span>2</span>
-      </label>
-      <label>
-        <input class="with-gap" name="group1" type="radio" value="3"/>
-        <span>3</span>
-      </label>
-      <label>
-        <input class="with-gap" name="group1" type="radio" value="4" />
-        <span>4</span>
-      </label>
-      <label>
-        <input class="with-gap" name="group1" type="radio" value="5" />
-        <span>5</span>
-      </label>
-    </p>
-  </form>
+          <label for="rating">Rating: </label>
+          <br><br>
+          <form action="#">
+            <p>
+              <label>
+                <input class="with-gap" name="group1" type="radio" value="1" />
+                <span>1</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group1" type="radio" value="2" />
+                <span>2</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group1" type="radio" value="3" />
+                <span>3</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group1" type="radio" value="4" />
+                <span>4</span>
+              </label>
+              <label>
+                <input class="with-gap" name="group1" type="radio" value="5" />
+                <span>5</span>
+              </label>
+            </p>
+          </form>
         </div>
       </div>
     </form>
   </div>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-#43a047 btn" id="review-submit">Submit</a>
-    </div>
   </div>
-
-          <a href="/">← Back To Home</a>
-      </div>
-    </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn" id="review-submit">Submit</a>
   </div>
 </div>
-
 <script src="/js/bevs.js"></script>
