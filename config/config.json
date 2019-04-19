@@ -1,14 +1,14 @@
 {
   "development": {
-    "username": "admin",
-    "password": "admin",
+    "username": "root",
+    "password": null,
     "database": "elevate_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
-    "username": "admin",
-    "password": "admin",
+    "username": "root",
+    "password": null,
     "database": "elevate_db",
     "host": "localhost",
     "dialect": "mysql",
