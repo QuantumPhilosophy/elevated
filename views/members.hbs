@@ -1,22 +1,79 @@
+<style>
+  body {
+    background: url('../imgs/strain_2.jpeg') black;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+</style>
 <div class="row">
   <div class="col s12">
-    <div>Welcome <span class="member-name"></span></div>
-    <div class="card grey darken-4">
-      <div class="card-content grey-text text-lighten-2">
-      <span class="card-title">Wishlist</span>
-        {{#if wishlistData.strainsWishlist}}
-        {{#each strainsWishlist}}
-          <p>{{wishlistData.bevsWishlist.bevs}}</p>
-        {{/each}}
-        {{else}}
-        Wishlist is empty.
-        {{/if}}
+    <div class="center-align">Welcome <span class="member-name"></span></div>
+    <ul class="tabs grey darken-3">
+      <li class="tab col s4"><a href="#wishlist" class="active">Wishlist</a></li>
+      <li class="tab col s4"><a href="#tried">Tried</a></li>
+      <li class="tab col s4"><a href="#reviews">Reviews</a></li>
+    </ul>
+
+    <div id="wishlist">
+      <div class="card grey darken-4">
+        <div class="card-content grey-text text-lighten-2">
+        <span class="card-title">Wishlist</span>
+          {{#if memberAreaData.strainsWishlist}}
+          {{#each strainsWishlist}}
+            <p>{{memberAreaData.bevsWishlist.bevs}}</p>
+          {{/each}}
+          {{else}}
+          Wishlist is empty.
+          {{/if}}
+        </div>
+        <div class="card-action">
+          <a href="/strains">Find Strain</a>
+          <a href="/bevs">Find Beverage</a>
+        </div>
       </div>
-      <div class="card-action">
-        <a href="/strains">Find Strain</a>
-        <a href="/bevs">Find Beverage</a>
+    </div>
+
+    <div id="tried">
+      <div class="card grey darken-4">
+        <div class="card-content grey-text text-lighten-2">
+        <span class="card-title">Tried</span>
+          {{#if memberAreaData.strainsWishlist}}
+          {{#each strainsWishlist}}
+            <p>{{memberAreaData.bevsWishlist.bevs}}</p>
+          {{/each}}
+          {{else}}
+          Tried list is empty.
+          {{/if}}
+        </div>
+        <div class="card-action">
+          <a href="/strains">Find Strain</a>
+          <a href="/bevs">Find Beverage</a>
+        </div>
       </div>
+    </div>
+
+    <div id="reviews">
+      <div class="card grey darken-4">
+        <div class="card-content grey-text text-lighten-2">
+          <span class="card-title">Reviews</span>
+          {{#if memberAreaData.bevsReviews}}
+          {{#each memberAreaData.bevsReviews}}
+            <p>{{memberAreaData.bevsReviews.strain_review}}</p>
+          {{/each}}
+          {{else}}
+          No Reviews.
+          {{/if}}
+        </div>
+        <div class="card-action">
+          <a href="/strains">Find Strain</a>
+          <a href="/bevs">Find Beverage</a>
+        </div>
+      </div>
+    </div>
+
+    </div>
   </div>
-</div>
 </div>
 <script src="/js/members.js"></script>
