@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
@@ -16,7 +17,7 @@
   <nav>
     <div class="nav-wrapper grey darken-4">
       <a href="#!" class="brand-logo left">Elevated</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+      <a href="#" data-target="mobile-sidenav" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/members">Account</a></li>
         <li><a href="/bevs">Beverages</a></li>
@@ -26,11 +27,11 @@
     </div>
   </nav>
 
-  <ul class="sidenav grey darken-4" id="mobile-demo">
-    <li><a class="grey-text text-darken-2" href="/members">Account</a></li>
-    <li><a class="grey-text text-darken-2" href="/bevs">Beverages</a></li>
-    <li><a class="grey-text text-darken-2" href="/strains">Strains</a></li>
-    <li><a class="grey-text text-darken-2" href="/logout">Logout</a></li>
+  <ul class="sidenav grey darken-4" id="mobile-sidenav">
+    <li><a class="grey-text" href="/members"><span class="fas fa-user-circle fa-2x"> Account</span></a></li>
+    <li><a class="grey-text" href="/bevs"><span class="fas fa-beer fa-2x"> Beverages</span></a></li>
+    <li><a class="grey-text" href="/strains"><span class="fas fa-cannabis fa-2x"> Strains</span></a></li>
+    <li><a class="grey-text" href="/logout"><span class="fas fa-sign-out-alt fa-2x"> Logout</span></a></li>
   </ul>
 
 <div class="container">

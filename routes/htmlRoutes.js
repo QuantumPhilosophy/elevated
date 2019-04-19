@@ -7,6 +7,9 @@ module.exports = function (app) {
   // Load strains page to view all strains
   app.get('/strains', isAuthenticated, function (req, res) {
     db.strain.findAll({}).then(function (strainsData) {
+      console.log('------------------------------------')
+      console.log(strainsData[0])
+      console.log('------------------------------------')
       res.render('strains', {
         strains: strainsData
       })
@@ -25,12 +28,15 @@ module.exports = function (app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get('/members', isAuthenticated, function (req, res) {
-    db.strain_review.findAll({}).then(function (strainsData) {
-      db.bev_review.findAll({}).then(function (bevsData) {
+    db.strain_review.findAll({}).then(function (strainsReviewData) {
+      db.bev_review.findAll({}).then(function (bevsReviewData) {
+        console.log('------------------------------------')
+        console.log(strainsReviewData[0].id)
+        console.log('------------------------------------')
         res.render('members', {
-          wishlistData: {
-            strainsWishlist: strainsData,
-            bevsWishlist: bevsData
+          memberAreaData: {
+            strainsReviews: strainsReviewData,
+            bevsReviews: bevsReviewData
           }
         })
       })
