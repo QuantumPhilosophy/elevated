@@ -7,9 +7,6 @@ module.exports = function (app) {
   // Load strains page to view all strains
   app.get('/strains', isAuthenticated, function (req, res) {
     db.strain.findAll({}).then(function (strainsData) {
-      console.log('------------------------------------')
-      console.log('strainsData', strainsData)
-      console.log('------------------------------------')
       res.render('strains', {
         strains: strainsData
       })
@@ -19,9 +16,6 @@ module.exports = function (app) {
   // Load bevs page to view all bevs
   app.get('/bevs', isAuthenticated, function (req, res) {
     db.bev.findAll({}).then(function (bevsData) {
-      console.log('------------------------------------')
-      console.log('bevsData', bevsData)
-      console.log('------------------------------------')
       res.render('bevs', {
         bevs: bevsData
       })
@@ -33,12 +27,6 @@ module.exports = function (app) {
   app.get('/members', isAuthenticated, function (req, res) {
     db.strain_review.findAll({}).then(function (strainsData) {
       db.bev_review.findAll({}).then(function (bevsData) {
-        console.log('------------------------------------')
-        console.log('Review Data:', strainsData)
-        console.log('------------------------------------')
-        console.log('------------------------------------')
-        console.log('Review Data:', bevsData)
-        console.log('------------------------------------')
         res.render('members', {
           wishlistData: {
             strainsWishlist: strainsData,

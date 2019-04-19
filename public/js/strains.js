@@ -7,9 +7,6 @@ $(document).ready(function () {
 
   const ratings = $('.rateYo')
   for (let i = 0; i < ratings.length; i++) {
-    console.log('------------------------------------')
-    console.log(ratings[i].dataset)
-    console.log('------------------------------------')
     $(`#rateYo-${ratings[i].dataset.id}`).rateYo({
       halfStar: true,
       rating: ratings[i].dataset.averageRating
@@ -18,11 +15,6 @@ $(document).ready(function () {
 
   // jQuery for materialize modals.
   $('.modal').modal()
-
-  // var reviewUser
-  // var reviewStrain
-  // var reviewTxt
-  // var reviewRtg
 
   $('#review-submit').click(function (event) {
     event.preventDefault()
