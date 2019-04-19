@@ -4,6 +4,8 @@ const db = require('../models')
 const Op = db.Sequelize.Op
 
 module.exports = function (app) {
+// ================================ BEV REVIEWS ==================================
+
   // Get all beverage reviews
   app.get('/api/bevReview', function (req, res) {
     db.bev_review.findAll({}).then(function (bevReview) {
@@ -39,6 +41,7 @@ module.exports = function (app) {
     })
   })
 
+  // ================================ STRAIN REVIEWS ====================================
   // Get all strain reviews
   app.get('/api/strainReview', function (req, res) {
     db.strain_review.findAll({}).then(function (strainReview) {
@@ -75,6 +78,7 @@ module.exports = function (app) {
     })
   })
 
+  // ================================ SELECTING BEVS =======================================
   // Select all bevs
   app.get('/api/allBevs', function (req, res) {
     db.bev.findAll({}).then(function (bevs) {
@@ -94,6 +98,7 @@ module.exports = function (app) {
     })
   })
 
+  // ============================== SELECTING STRAINS ====================================
   // Select all strains
   app.get('/api/allStrains', function (req, res) {
     db.strain.findAll({}).then(function (strains) {
@@ -113,11 +118,61 @@ module.exports = function (app) {
     })
   })
 
-  // Add friend to follow list
-  // Add product to wishlist
-  // Add product to tried list
+  // ===================ADD BEVS AND STRAINS TO WISH LIST AND TRIED LIST ==============================
+  // Select bev by id and add to user's wishlist
+  app.get('/api/addWishBev/:id', function (req, res) {
+    db.bev.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (bevs) {
+      let value = req.user.id
+      bevs.addUser(value)
+    })
+  })
 
-  // Select recent reviews
+  // Select bev by id and add to user's tried list
+  app.get('/api/addTriedBev/:id', function (req, res) {
+    console.log(db.tastedBev)
+    db.bev.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (bevs) {
+      let value = req.user.id
+      bevs.addTriedUser(value).then(associatedUsers => {
+        res.json({ bevs, associatedUsers })
+      })
+    })
+  })
+
+  // Select strain by id and add to user's wishlist
+  app.get('/api/addWishStrain/:id', function (req, res) {
+    db.strain.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (strain) {
+      let value = req.user.id
+      strain.addUser(value)
+    })
+  })
+
+  // Select strain by id and add to user's tried list
+  app.get('/api/addTriedStrain/:id', function (req, res) {
+    db.strain.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (strain) {
+      let value = req.user.id
+      strain.addTriedUser(value).then(associatedUsers => {
+        res.json({ strain, associatedUsers })
+      })
+    })
+  })
+
+  //= ==========================   SELECT RECENT REVIEWS ========================================
   app.get('/api/recentStrainReview', function (req, res) {
     db.strain_review.findAll({
       limit: 2,
@@ -140,7 +195,7 @@ module.exports = function (app) {
     })
   })
 
-  // Select reviews by UserId
+  //= ==========================   SELECT REVIEWS BY USER ID ========================================
   app.get('/api/userBevReview/:id', function (req, res) {
     db.bev_review.findAll({
       where: {
@@ -161,3 +216,5 @@ module.exports = function (app) {
     })
   })
 }
+
+// TO DO ========= ADD FRIENDS
