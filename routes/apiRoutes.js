@@ -216,17 +216,6 @@ module.exports = function (app) {
     })
   })
 
-  // ============================ UPDATE AVERAGE RATING ===============================================
-  // app.get('/api/bevReviewRtg/:id', function (req, res) {
-  //   db.bev_review.findAll({
-  //     where: {
-  //       bev_id: req.params.id
-  //     }
-  //   }).then(function (bevReviews) {
-  //     res.json(bevReviews)
-  //   })
-  // })
-
   // ========================== RETRIEVE WISHLIST AND TRIED LIST ===================================
 
   app.get('/api/userBevWishlist/:id', function (req, res) {
