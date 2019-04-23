@@ -215,6 +215,43 @@ module.exports = function (app) {
       res.json(strainReview)
     })
   })
-}
 
+  // ============================ UPDATE AVERAGE RATING ===============================================
+  // app.get('/api/bevReviewRtg/:id', function (req, res) {
+  //   db.bev_review.findAll({
+  //     where: {
+  //       bev_id: req.params.id
+  //     }
+  //   }).then(function (bevReviews) {
+  //     res.json(bevReviews)
+  //   })
+  // })
+
+  // ========================== RETRIEVE WISHLIST AND TRIED LIST ===================================
+
+  app.get('/api/userBevWishlist/:id', function (req, res) {
+    db.User.findAll({
+      include: [
+        {
+          model: db.bev,
+          through: 'WishListBev'
+        }
+      ]
+    }).then(users => {
+      res.json(users)
+    })
+  })
+}
+// app.get('/api/addTriedStrain/:id', function (req, res) {
+//   db.strain.findOne({
+//     where: {
+//       id: req.params.id
+//     }
+//   }).then(function (strain) {
+//     let value = req.user.id
+//     strain.addTriedUser(value).then(associatedUsers => {
+//       res.json({ strain, associatedUsers })
+//     })
+//   })
+// })
 // TO DO ========= ADD FRIENDS
