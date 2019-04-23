@@ -215,6 +215,32 @@ module.exports = function (app) {
       res.json(strainReview)
     })
   })
-}
 
+  // ========================== RETRIEVE WISHLIST AND TRIED LIST ===================================
+
+  app.get('/api/userBevWishlist/:id', function (req, res) {
+    db.User.findAll({
+      include: [
+        {
+          model: db.bev,
+          through: 'WishListBev'
+        }
+      ]
+    }).then(users => {
+      res.json(users)
+    })
+  })
+}
+// app.get('/api/addTriedStrain/:id', function (req, res) {
+//   db.strain.findOne({
+//     where: {
+//       id: req.params.id
+//     }
+//   }).then(function (strain) {
+//     let value = req.user.id
+//     strain.addTriedUser(value).then(associatedUsers => {
+//       res.json({ strain, associatedUsers })
+//     })
+//   })
+// })
 // TO DO ========= ADD FRIENDS
