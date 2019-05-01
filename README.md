@@ -1,4 +1,5 @@
 # Elevated
+https://elevated-shadow.herokuapp.com/
 
 ## Description
 Finding a new drink or strain to help elevate you. Tracking what has elevated you and what did not.
@@ -15,10 +16,13 @@ Setup the local database by running the `schema.sql` in a MySql interface (e.g. 
 ### Languages
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
   * JavaScript
-  * jQuery
-  * Bootstrap 4
   * CSS 3
   * HTML 5
+
+### Libraries used
+#### Materialize
+#### jQuery
+#### RateYo!
 
 ### Node Packages Used
 #### App Dependencies

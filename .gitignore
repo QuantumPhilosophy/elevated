@@ -64,7 +64,8 @@ typings/
 # VS Code
 .vscode
 
+# Intellij Idea
+.idea/
+
 # Mac files
 .DS_Store
-
-
